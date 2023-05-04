@@ -5,7 +5,7 @@
 .navbar {
   width: 100%;
   height: 100px;
-  background-color: transparent;
+  background-color: #091930;
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.5rem 3rem !important;
@@ -483,4 +483,16 @@
   .contactpara br {
     display: none;
   }
+
+  #logo
+  {
+    display: none;
+  }
+}
+
+
+/*Addedd later*/
+#logo
+{
+  width: 190px;
 }
