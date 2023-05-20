@@ -1,6 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
 
 /* Header style */
+
+  :root {
+    --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --navy-shadow: rgba(2, 12, 27, 0.7);
+    --dark-slate: #495670;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100, 255, 218, 0.1);
+    --pink: #f57dff;
+    --blue: #57cbff;
+    --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text",
+      -apple-system, system-ui, sans-serif;
+    --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    --fz-xxs: 12px;
+    --fz-xs: 13px;
+    --fz-sm: 14px;
+    --fz-md: 16px;
+    --fz-lg: 18px;
+    --fz-xl: 20px;
+    --fz-xxl: 22px;
+    --fz-heading: 32px;
+    --border-radius: 4px;
+    --nav-height: 100px;
+    --nav-scroll-height: 70px;
+    --tab-height: 42px;
+    --tab-width: 120px;
+    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --hamburger-width: 30px;
+    --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    --ham-after: bottom 0.1s ease-in 0.25s,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ham-after-active: bottom 0.1s ease-out,
+      transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+    --green: #65ffda;
+    --basic: #0a1930;
+    --font-mono: "Fira Mono", monospace;
+  }
 
 .navbar {
   width: 100%;
@@ -69,12 +115,6 @@
   transform: rotate(-135deg) !important;
   opacity: 0.9 !important;
 }
-.logo {
-  background-image: url(../Assets/logor.png);
-  background-size: cover;
-  width: 90px;
-  height: 80px;
-}
 
 .nav-link {
   color: white !important;
@@ -83,20 +123,11 @@
   font-weight: 500 !important;
   padding-right: 2rem !important;
   padding-left: 1rem !important;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 .nav-link:hover {
-  color: #191919 !important;
-}
-.resumebtn {
-  margin-left: 30px;
-  border-radius: 25px;
-  padding: 0 25px;
-  background-color: #4158d0;
-  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 100%);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
-  border: none;
+  color: #75c695 !important;
 }
 
 @media (max-width: 767px) {
@@ -310,16 +341,16 @@
 }
 .aboutdetails {
   font-size: 1.1em !important;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 .skilllist li {
   letter-spacing: 1px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 .skilllist {
   font-weight: 600;
   list-style-type: none;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 .skilllist li:hover {
   transform: scale(1.05);
@@ -368,8 +399,8 @@
   padding-right: 25px !important;
   height: auto !important;
 }
-.card-text{
-  font-family: 'Poppins';
+.card-text {
+  font-family: "Poppins";
 }
 .project-card-view {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
@@ -400,13 +431,21 @@
   justify-content: center;
   font-size: 18px;
   letter-spacing: 1px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
-.btn-primary {
-  color: #191919 !important;
-  background-color: transparent !important;
-  border-color: #191919 !important;
+.resumebtn {
+  color: #64ffda;
+  background-color: #091930;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--transition);
+  margin-left: 15px;
+  font-size: var(--fz-xs);
 }
 
 .btn-primary:hover {
@@ -452,7 +491,7 @@
   font-size: 16px;
   letter-spacing: 1px;
   padding-bottom: 1rem;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 .contactbtn {
   display: block;
@@ -473,7 +512,7 @@
   right: 0;
   text-align: center;
   font-size: 12px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 .copyright span {
   font-weight: 700;
@@ -484,15 +523,12 @@
     display: none;
   }
 
-  #logo
-  {
+  #logo {
     display: none;
   }
 }
 
-
 /*Addedd later*/
-#logo
-{
+#logo {
   width: 190px;
 }

@@ -17,7 +17,7 @@ function Contactpage() {
         <span></span>
         <p className='copyright'>© Copyright 2023
         <hr />
-        Designed & Built by <span>rahulvijay</span></p>
+        Designed & Built by <span>gurnoordeol</span></p>
       </Container>
     </div>
   )

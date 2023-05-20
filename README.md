@@ -1,14 +1,14 @@
 # Personal Portfolio
-This is a personal portfolio website built with React.js and Bootstrap, utilizing React Router v6 to enable easy access to multiple pages. The website was designed and created entirely by Rahul Vijay, showcasing his skills and projects.
+This is a personal portfolio website built with React.js and Bootstrap, utilizing React Router v6 to enable easy access to multiple pages. The website was designed and created by Gurnoor Deol, taking inspiration from other portfolio projects to showcase his skills and projects.
 
 
-![Rahul-Portfolio](https://user-images.githubusercontent.com/118264222/224553983-d0782a0a-7fb0-479e-a491-c7124b286d03.png)
+![Gurnoor-Portfolio](https://user-images.githubusercontent.com/118264222/224553983-d0782a0a-7fb0-479e-a491-c7124b286d03.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Features
 
-Multiple Pages (React Router): The website has multiple pages to showcase various aspects of Rahul's skills and projects.
+Multiple Pages (React Router): The website has multiple pages to showcase various aspects of Gurnoor's skills and projects.
 
 Fully Responsive: The website is fully responsive and works well on all devices.
 
