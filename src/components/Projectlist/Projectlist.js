@@ -8,6 +8,7 @@ import netfliximage from '../../Assets/React-App-netflix-clone.png'
 import gridlinesbuilders from '../../Assets/Gridlinesbuilders.png'
 import charlespizza from '../../Assets/Charlestown-Pizza.png'
 import todolist from '../../Assets/todolist.png'
+import foodApp from '../../Assets/foodApp.png'
 
 function Projectlist() {
   return (
@@ -17,11 +18,11 @@ function Projectlist() {
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
             <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={useradminpanel}
+                imgPath={foodApp}
                 isBlog={false}
                 title="Dashboard Panel"
-                description="User Admin Dashboard created with React js, Material UI, Nivo Charts, Formik, Yup, FullCalendar, and Data Grid to build this entire application. This application consists of Light and Dark Mode, four different Charts, three different Data Table Pages, FAQ Page, Form Page, and Calendar Integration."
-                ghLink="https://rahul-dashboard-pannel.netlify.app"
+                description="Food Order App using react.js as FE, firebase as a backend, and deploye don Github. Provides users with an interactive way to place an order from pre-defined items and display a cart indicating the Total price and quantity of items. Users can further vary the amount from within the cart and input the address for the order to be delivered."
+                ghLink="https://deol7777.github.io/Food-App/"
               />
             </Col>
 
@@ -72,13 +73,12 @@ function Projectlist() {
                 title="To Do List"
                 description=" To-Do App that build will allow a user to add a task to a list of to-do items. Once the task is added, the user will be able to delete it as completed once it has done."
                 ghLink="https://todolist-rahul81.netlify.app/"
-
               />
             </Col>
           </Row>
         </Container>
       </Container>
     </div>
-  )
+  );
 }
 export default Projectlist
