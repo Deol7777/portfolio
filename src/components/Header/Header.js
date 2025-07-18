@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
-import logor from "../../Assets/logor.png";
+import logo from "../../Assets/logo.png";
 import "../../pages/style.css";
 
 function Header() {
@@ -27,7 +27,7 @@ function Header() {
       expand="md"
       className={navColour ? "sticky" : "navbar"}
     >
-      <img id="logo" src={logor} alt="Girl in a jacket" />
+      <img id="logo" src={logo} alt="Girl in a jacket" />
 
       <Navbar.Toggle
         className="navbar-toggler"
