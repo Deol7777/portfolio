@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from "react";
 import "../../pages/style.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { animate, createScope } from 'animejs';
-
+import { Link } from "react-router-dom";
 function Aboutpage() {
   const root = useRef(null);
   const scope = useRef(null);
+
 
   useEffect(() => {
     scope.current = createScope({ root: root.current }).add(self => {
@@ -33,7 +34,8 @@ function Aboutpage() {
         opacity: [0, 1],
         duration: 600,
         ease: 'out(2)',
-        delay: (el, i) => i * 100 + 1000
+        delay: (el, i) => i * 100 + 1000,
+
       });
 
       // Animate the web image
@@ -46,10 +48,12 @@ function Aboutpage() {
       });
 
       // Create hover animations for skills
-      self.add('hoverSkill', (target, enter = true) => {
+      self.add('hoverSkill', (target, enter = true, index = 0) => {
+        // Calculate rotation based on index: alternate left/right
+        const rotateAmount = (index % 2 === 0 ? 5 : -5);
         animate(target, {
-          scale: enter ? [1, 1.1] : [1.1, 1],
-          rotate: enter ? [0, 5] : [5, 0],
+          scale: enter ? [1, 1.5] : [1.5, 1],
+          rotate: enter ? [0, rotateAmount] : [rotateAmount, 0],
           duration: 300,
           ease: 'out(2)'
         });
@@ -69,17 +73,21 @@ function Aboutpage() {
     return () => scope.current?.revert();
   }, []);
 
-  const handleSkillHover = (e, enter = true) => {
+  const handleSkillHover = (e, enter = true, index = 0) => {
     if (scope.current?.methods?.hoverSkill) {
-      scope.current.methods.hoverSkill(e.target, enter);
+      scope.current.methods.hoverSkill(e.target, enter, index);
     }
   };
 
+  // Flattened skills array
   const skills = [
-    ["HTML5/CSS3", "JavaScript", "TypeScript", "Java", "Python"],
-    ["React Js", "Redux Js", "Angular", "Spring"],
-    ["Git/Github", "AWS", "SQL", "Tailwind CSS", "Bootstrap 5"]
+    "HTML5/CSS3", "JavaScript", "TypeScript", "Java", "Python",
+    "React Js", "Redux Js", "Angular", "Spring",
+    "Git/Github", "AWS", "SQL", "Tailwind CSS", "Bootstrap 5"
   ];
+
+  // Import Link from react-router-dom at the top of your file:
+  // import { Link } from "react-router-dom";
 
   return (
     <div ref={root} className="aboutpagebackground">
@@ -87,45 +95,53 @@ function Aboutpage() {
         <Row className="textbackground">
           <Col md={7}>
             <h3 className="aboutmetext" style={{ opacity: 0 }}>
-              About <span>Me</span>
+              <span>WHO AM I</span>
             </h3>
-            <p className="aboutdetails" style={{ opacity: 0 }}>
-              Hey there, I'm Gurnoor Deol, a Vancouver-based Computing Science
-              student at SFU. My journey revolves around designing responsive
-              websites and engineering software solutions. During my 2 years of
-              experience in the industry, I've had the privilege of working on
-              diverse projects that have honed my skills in full-stack
-              development, database management and UI design. Collaborative by
-              nature, I relish the dynamic energy of team efforts. Beyond
-              coding, you'll find me capturing the beauty of British Columbia's
-              landscapes and exploring compelling sci-fi reads. Fueled by an
-              unquenchable thirst for knowledge, I'm excited to carve a path in
-              the ever-evolving tech landscape, one innovation at a time.
-            </p>
+            <div>
+            <p className="aboutdetails">
+              
+  A curious and dedicated software developer who enjoys building clean, efficient, and user-friendly web applications.<br />
+  I mostly work with Java and React, but I’m always exploring new tools, technologies, and ways to improve how we write and ship code.<br /><br />
+  
+  I care a lot about writing maintainable software, collaborating with teams, and making sure the end-user experience actually makes sense (because yes, buttons <em>should</em> do what they say).<br /><br />
+  
+  Outside of code, I like learning about infrastructure, observing how things break (so I can fix them), and occasionally wondering how we ever coded without dark mode.<br /><br />
+  
+
+</p>
+</div>
           </Col>
           <Col md={5}>
             <div className="webimage" style={{ opacity: 0 }}></div>
           </Col>
-          <ul className="skilllist pl-0 text-lg">
-            <Row>
-              <h3 className="aboutmetext">Skills</h3>
-              {skills.map((colSkills, colIdx) => (
-                <Col md={4} key={colIdx}>
-                  {colSkills.map((skill, idx) => (
-                    <li
-                      key={skill}
-                      style={{ opacity: 0 }}
-                      onMouseEnter={(e) => handleSkillHover(e, true)}
-                      onMouseLeave={(e) => handleSkillHover(e, false)}
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </Col>
-              ))}
-            </Row>
-          </ul>
         </Row>
+        <p className="aboutdetails">
+          <span id="stoppingBy">
+            {/* Remove default link styling */}
+            <Link to="/contact" style={{ color: "inherit", textDecoration: "none" }}>
+              Thanks for stopping by—let’s connect!
+            </Link>
+          </span>
+        </p>
+        <Row>
+        </Row>
+
+        {/* Skills Section */}
+        <h3 className="aboutmetext" style={{ marginTop: "2rem" }}>
+          Skills
+        </h3>
+        <ul className="skilllist pl-0 text-lg">
+          {skills.map((skill, index) => (
+            <li
+              key={skill}
+              style={{ opacity: 0 }}
+              onMouseEnter={(e) => handleSkillHover(e, true, index)}
+              onMouseLeave={(e) => handleSkillHover(e, false, index)}
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
       </Container>
     </div>
   );

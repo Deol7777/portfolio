@@ -52,6 +52,7 @@
     --g-second: #393E46;
     --g-third: #00ADB5;
     --g-fourth: #EEEEEE;
+    --g-purple: rgb(39, 20, 76);
 
   }
 
@@ -281,14 +282,9 @@
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
+  background-color: var(--g-fourth);
   padding-top: 110px;
+  padding-bottom: 60px;
 }
 .textbackground {
   width: 100%;
@@ -296,8 +292,7 @@
   padding: 1rem;
   background-color: transparent;
   border-radius: 15px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
+  
 }
 .aboutmetext {
   font-size: 2em !important;
@@ -308,7 +303,8 @@
 .aboutmetext span:hover {
   display: inline-block;
   transition: all 500ms;
-  color: #fff;
+  scale: 1.2;
+  color: #5a0f0f;
   animation: vibrate 30ms linear infinite forwards;
 }
 @keyframes vibrate {
@@ -324,19 +320,37 @@
   font-family: "Poppins";
 
 }
-.skilllist li {
-  letter-spacing: 1px;
-  font-family: "Poppins";
-}
 .skilllist {
-  font-weight: 600;
-  list-style-type: none;
-  font-family: "Poppins";
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  /* flex layout so each <li> is only as wide as its content */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;         /* space between items */
 }
+
+/* make each skill shrink-to-fit its content */
+.skilllist li {
+    display: inline-flex
+;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-family: "Poppins";
+    letter-spacing: 1px;
+    font-weight: 600;
+    /* transition: transform 0.2s, background 0.2s; */
+    margin: 0 10px;
+}
+
 .skilllist li:hover {
-  transform: scale(1.05);
-  transition: 5ms;
-  color: #e8e8e8;
+  /* transform: scale(1.05); */
+  background: rgb(39, 20, 76);
+  color: #f0f0f0;
 }
 .webimage {
   max-width: 500px;
@@ -527,4 +541,22 @@ a.socialLink:hover {
     color: rgb(0, 0, 0);
     background-color: var(--g-fourth);
     border-radius: 5px;
+}
+
+#stoppingBy {
+    color: var(--g-purple);
+    text-align: right;
+    font-size: 2rem;
+    font-family: monospace;
+    padding: 20px;
+    text-decoration: none;
+}
+#stoppingBy:hover {
+  color: #fff;
+  background: rgba(39, 20, 76, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 24px 12px rgba(39, 20, 76, 0.45);
+  /* backdrop-filter: blur(6px); */
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  cursor: pointer;
 }
