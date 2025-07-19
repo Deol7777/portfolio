@@ -1,17 +1,95 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../../pages/style.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { animate, createScope } from 'animejs';
 
 function Aboutpage() {
+  const root = useRef(null);
+  const scope = useRef(null);
+
+  useEffect(() => {
+    scope.current = createScope({ root: root.current }).add(self => {
+      // Animate the "About Me" text on page load
+      animate('.aboutmetext', {
+        translateY: [-50, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        ease: 'out(3)',
+        delay: 200
+      });
+
+      // Animate the description paragraph
+      animate('.aboutdetails', {
+        translateY: [30, 0],
+        opacity: [0, 1],
+        duration: 800,
+        ease: 'out(2)',
+        delay: 600
+      });
+
+      // Animate skills with staggered effect
+      animate('.skilllist li', {
+        translateX: [-100, 0],
+        opacity: [0, 1],
+        duration: 600,
+        ease: 'out(2)',
+        delay: (el, i) => i * 100 + 1000
+      });
+
+      // Animate the web image
+      animate('.webimage', {
+        scale: [0.5, 1],
+        opacity: [0, 1],
+        duration: 1000,
+        ease: 'out(3)',
+        delay: 400
+      });
+
+      // Create hover animations for skills
+      self.add('hoverSkill', (target, enter = true) => {
+        animate(target, {
+          scale: enter ? [1, 1.1] : [1.1, 1],
+          rotate: enter ? [0, 5] : [5, 0],
+          duration: 300,
+          ease: 'out(2)'
+        });
+      });
+
+      // Create a floating animation for the web image
+      animate('.webimage', {
+        translateY: [-10, 10],
+        duration: 3000,
+        loop: true,
+        direction: 'alternate',
+        ease: 'inOut(2)',
+        delay: 2000
+      });
+    });
+
+    return () => scope.current?.revert();
+  }, []);
+
+  const handleSkillHover = (e, enter = true) => {
+    if (scope.current?.methods?.hoverSkill) {
+      scope.current.methods.hoverSkill(e.target, enter);
+    }
+  };
+
+  const skills = [
+    ["HTML5/CSS3", "JavaScript", "TypeScript", "Java", "Python"],
+    ["React Js", "Redux Js", "Angular", "Spring"],
+    ["Git/Github", "AWS", "SQL", "Tailwind CSS", "Bootstrap 5"]
+  ];
+
   return (
-    <div className="aboutpagebackground">
+    <div ref={root} className="aboutpagebackground">
       <Container>
         <Row className="textbackground">
           <Col md={7}>
-            <h3 className="aboutmetext">
+            <h3 className="aboutmetext" style={{ opacity: 0 }}>
               About <span>Me</span>
             </h3>
-            <p className="aboutdetails">
+            <p className="aboutdetails" style={{ opacity: 0 }}>
               Hey there, I'm Gurnoor Deol, a Vancouver-based Computing Science
               student at SFU. My journey revolves around designing responsive
               websites and engineering software solutions. During my 2 years of
@@ -26,34 +104,25 @@ function Aboutpage() {
             </p>
           </Col>
           <Col md={5}>
-            <div className="webimage"></div>
+            <div className="webimage" style={{ opacity: 0 }}></div>
           </Col>
           <ul className="skilllist pl-0 text-lg">
             <Row>
               <h3 className="aboutmetext">Skills</h3>
-              <Col md={4}>
-                <li>HTML5/CSS3</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Java</li>
-                <li>Python</li>
-
-              </Col>
-              <Col md={4}>
-                <li>React Js</li>
-                <li>Redux Js</li>
-                <li>Angular</li>
-                <li>Spring</li>
-
-              </Col>
-              <Col md={4}>
-                <li>Git/Github</li>
-                <li>AWS</li>
-                <li>SQL</li>
-                <li>Tailwind CSS</li>
-                <li>Bootsrap 5</li>
-
-              </Col>
+              {skills.map((colSkills, colIdx) => (
+                <Col md={4} key={colIdx}>
+                  {colSkills.map((skill, idx) => (
+                    <li
+                      key={skill}
+                      style={{ opacity: 0 }}
+                      onMouseEnter={(e) => handleSkillHover(e, true)}
+                      onMouseLeave={(e) => handleSkillHover(e, false)}
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </Col>
+              ))}
             </Row>
           </ul>
         </Row>
