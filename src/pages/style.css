@@ -287,6 +287,8 @@
   background-color: var(--g-fourth);
   padding-top: 110px;
   padding-bottom: 60px;
+  position: relative;   /* establish a stacking context */
+  overflow: hidden;     /* clip anything outside the box */
 }
 .textbackground {
   width: 100%;
@@ -302,11 +304,11 @@
   font-weight: 600 !important;
   letter-spacing: 1px !important;
 }
-.aboutmetext span:hover {
+.aboutmetext:hover {
   display: inline-block;
   transition: all 500ms;
   scale: 1.2;
-  color: #5a0f0f;
+  color: #5a0f0f !important;
   animation: vibrate 30ms linear infinite forwards;
 }
 @keyframes vibrate {
@@ -377,9 +379,7 @@
 .projectbackground {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient( 34deg, #c254e9 0%, #ca8ac6 46%, #cac67c 100% );
-  background-color: #D9AFD9;
-/* background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); */
+  background-color: var(--g-second);
 
 }
 .project-section {
@@ -397,28 +397,32 @@
   font-family: "Poppins";
 }
 .project-card-view {
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
-  color: var(--g-second);
-  background-color: transparent !important;
-  border: transparent;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
+  display: flex;
+  flex-direction: column;
   height: 100% !important;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+              rgba(17, 17, 26, 0.1) 0px 8px 24px,
+              rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
+  color: var(--g-second);
   border-radius: 15px;
+  border: solid black;
 }
+
 .project-card-view:hover {
-  transform: scale(1.02) !important;
   overflow: hidden !important;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
+              rgba(17, 17, 26, 0.1) 0px 8px 24px,
+              rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
+  background-color: rgb(231, 231, 231);
 }
 
 .card-img-top {
   padding: 20px !important;
   opacity: 0.8 !important;
   border-radius: 10px !important;
+  height: 230px;
 }
+
 .viewbtn {
   display: flex;
   align-items: center;
@@ -427,6 +431,7 @@
   letter-spacing: 1px;
   font-family: "Poppins";
 }
+
 
 .resumebtn {
   color: #64ffda;
@@ -554,11 +559,28 @@ a.socialLink:hover {
     text-decoration: none;
 }
 #stoppingBy:hover {
-  color: #fff;
-  background: rgba(39, 20, 76, 0.85);
-  border-radius: 12px;
-  box-shadow: 0 0 24px 12px rgba(39, 20, 76, 0.45);
-  /* backdrop-filter: blur(6px); */
-  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
-  cursor: pointer;
+    color: #fff;
+    background: rgba(39, 20, 76, 0.85);
+    border-radius: 12px;
+    box-shadow: -4px 9px 0px 0px rgba(39, 20, 76, 0.45);
+    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.whoami-words-column {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    letter-spacing: 10px;
+    font-family: "Bitcount Grid Single", system-ui;
+    font-size: 6rem;
+}
+
+.whoami-word:hover {
+  display: inline-block;
+  transition: all 500ms;
+  scale: 1.2;
+  color: #5a0f0f;
+  animation: vibrate 30ms linear infinite forwards;
+  font-family: "Bitcount Grid Single", system-ui;
 }

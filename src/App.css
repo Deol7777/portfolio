@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+/* App.css or index.css */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

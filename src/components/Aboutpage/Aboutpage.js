@@ -68,6 +68,15 @@ function Aboutpage() {
         ease: 'inOut(2)',
         delay: 2000
       });
+
+      // stagger‐fade in "WHO AM I" words
+      animate('.whoami-word', {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 600,
+        easing: 'easeOutQuad',
+        delay: (el, i) => i * 500 + 200  // 200ms, 700ms, 1200ms
+      });
     });
 
     return () => scope.current?.revert();
@@ -94,30 +103,34 @@ function Aboutpage() {
       <Container>
         <Row className="textbackground">
           <Col md={7}>
-            <h3 className="aboutmetext" style={{ opacity: 0 }}>
+            {/* <h3 className="aboutmetext" style={{ opacity: 0 }}>
               <span>WHO AM I</span>
-            </h3>
+            </h3> */}
             <div>
-            <p className="aboutdetails">
-              
-  A curious and dedicated software developer who enjoys building clean, efficient, and user-friendly web applications.<br />
-  I mostly work with Java and React, but I’m always exploring new tools, technologies, and ways to improve how we write and ship code.<br /><br />
-  
-  I care a lot about writing maintainable software, collaborating with teams, and making sure the end-user experience actually makes sense (because yes, buttons <em>should</em> do what they say).<br /><br />
-  
-  Outside of code, I like learning about infrastructure, observing how things break (so I can fix them), and occasionally wondering how we ever coded without dark mode.<br /><br />
-  
-
-</p>
-</div>
+              <p className="aboutdetails">
+                A curious and dedicated software developer who enjoys building clean, efficient, and user-friendly web applications.<br />
+                I mostly work with Java and React, but I’m always exploring new tools, technologies, and ways to improve how we write and ship code.<br /><br />
+                I care a lot about writing maintainable software, collaborating with teams, and making sure the end-user experience actually makes sense (because yes, buttons <em>should</em> do what they say).<br /><br />
+                Outside of code, I like learning about infrastructure, observing how things break (so I can fix them), and occasionally wondering how we ever coded without dark mode.<br /><br />
+              </p>
+            </div>
           </Col>
           <Col md={5}>
-            <div className="webimage" style={{ opacity: 0 }}></div>
+            <div className="whoami-words-column">
+              {["WHO", "AM", "I"].map((word, idx) => (
+                <div
+                  key={word}
+                  className="whoami-word"
+                  style={{ opacity: 1, textAlign: "center", fontWeight: "bold", lineHeight: "1.2" }}
+                >
+                  {word}
+                </div>
+              ))}
+            </div>
           </Col>
         </Row>
         <p className="aboutdetails">
           <span id="stoppingBy">
-            {/* Remove default link styling */}
             <Link to="/contact" style={{ color: "inherit", textDecoration: "none" }}>
               Thanks for stopping by—let’s connect!
             </Link>
@@ -127,8 +140,8 @@ function Aboutpage() {
         </Row>
 
         {/* Skills Section */}
-        <h3 className="aboutmetext" style={{ marginTop: "2rem" }}>
-          Skills
+        <h3 className="aboutmetext" style={{ marginTop: "2rem" ,marginBottom: "3rem"  }}>
+          What can I Do
         </h3>
         <ul className="skilllist pl-0 text-lg">
           {skills.map((skill, index) => (
