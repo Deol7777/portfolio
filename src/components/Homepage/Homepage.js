@@ -12,6 +12,22 @@ import { FaLinkedinIn } from 'react-icons/fa'
 import tree from '../../Assets/tree1.png'
 
 function Home() {
+
+  const social = [
+    {
+      link: 'https://github.com/Deol7777',
+      component: <AiFillGithub />
+    },
+    {
+      link: 'https://www.linkedin.com/in/gurnoor-deol/',
+      component: <FaLinkedinIn />
+    },
+    {
+      link: 'https://www.instagram.com/deol_gurnoor/',
+      component: <AiFillInstagram />
+    }
+  ];
+
   return (
     <div className='homepagebackground'>
       {/* bird animation */}
@@ -37,44 +53,24 @@ function Home() {
             <h2 className='nametext'>I'm Gurnoor Deol</h2>
             <span></span>
             <Text />
-            <div style={{ display: 'flex', gap: '20px', marginTop: '16px' }}>
-              <a
-                href='https://github.com/Deol7777'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='socialLink'
-              >
-                <AiFillGithub className='icon' />
-              </a>
-              <a
-                href='https://www.linkedin.com/in/rahulvijay81/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='socialLink'
-              >
-                <FaLinkedinIn className='icon' />
-              </a>
-              <a
-                href='https://twitter.com/rahulvijay8156'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='socialLink'
-              >
-                <AiOutlineTwitter className='icon' />
-              </a>
-              <a
-                href='https://instagram.com/rahulvijay81'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='socialLink'
-              >
-                <AiFillInstagram className='icon' />
-              </a>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '16px', zIndex: 3 }}>
+
+              {social.map((obj, idx) => (
+                <a
+                  key={idx}
+                  href={obj.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='socialLink'
+                >
+                  {React.cloneElement(obj.component, { className: 'icon' })}
+                </a>
+              ))}
             </div>
           </Col>
 
           <Col md={4}>
-            <img id='tree' src={tree} alt='Tree' />
+            <img style={{ zIndex: 0 }} id='tree' src={tree} alt='Tree' />
           </Col>
         </Row>
       </Container>
