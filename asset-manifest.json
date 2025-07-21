@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.8c56aab0.css",
+    "main.js": "/portfolio/static/js/main.1e9cdd25.js",
+    "static/media/eventsApp.png": "/portfolio/static/media/eventsApp.0be7c41e7a761cebfcf9.png",
+    "static/media/foodApp.png": "/portfolio/static/media/foodApp.02455c1529c57b6ff781.png",
+    "static/media/tree1.png": "/portfolio/static/media/tree1.09e1ab09e529404661a3.png",
+    "static/media/React-App-netflix-clone.png": "/portfolio/static/media/React-App-netflix-clone.77610b2c950486dbb80f.png",
+    "static/media/Charlestown-Pizza.png": "/portfolio/static/media/Charlestown-Pizza.b014158f9b26c5b5b0e9.png",
+    "static/media/Gridlinesbuilders.png": "/portfolio/static/media/Gridlinesbuilders.b1ae9a07030baae69f63.png",
+    "static/media/olx-clone image.png": "/portfolio/static/media/olx-clone image.887047ffbf12c447e947.png",
+    "static/media/tech.png": "/portfolio/static/media/tech.990c71fbe2849cc30eab.png",
+    "static/media/web-removebg-preview.png": "/portfolio/static/media/web-removebg-preview.9fed7f1d0b7ca01038fd.png",
+    "static/media/todolist.png": "/portfolio/static/media/todolist.13858f78acbb5bec224e.png",
+    "static/media/bird-cells-new.svg": "/portfolio/static/media/bird-cells-new.579440de6c0438f40b2b.svg",
+    "static/media/bars.svg": "/portfolio/static/media/bars.a2e35dd5aede7934d82e.svg",
+    "index.html": "/portfolio/index.html",
+    "main.8c56aab0.css.map": "/portfolio/static/css/main.8c56aab0.css.map",
+    "main.1e9cdd25.js.map": "/portfolio/static/js/main.1e9cdd25.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c56aab0.css",
+    "static/js/main.1e9cdd25.js"
+  ]
+}
