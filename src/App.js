@@ -5,10 +5,8 @@ import Preloader from "../src/components/Pre";
 import Home from "./pages/Home.js";
 import About from "./pages/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { motion } from "framer-motion";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
-import AnimeCursor from "./components/AnimatedCursor/AnimatedCursor";
 import Header from "./components/Header/Header.js";
 
 function App() {

@@ -2,7 +2,6 @@
   "name": "gurnoorportfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Deol7777.github.io/",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^5.17.0",
