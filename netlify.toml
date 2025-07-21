@@ -1,4 +1,3 @@
-/gurnoordeol/Desktop/Portfolio/portfolio/netlify.toml
 [build]
   publish = "build"
   command = "npm run build"
