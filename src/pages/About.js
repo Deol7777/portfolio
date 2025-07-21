@@ -6,7 +6,6 @@ import Aboutpage from '../components/Aboutpage/Aboutpage'
 function About() {
   return (
     <div>
-      <Header />
       <Aboutpage />
     </div>
   )

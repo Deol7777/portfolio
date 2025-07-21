@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { BsGithub, BsGlobe } from "react-icons/bs";
 
 
 
@@ -12,24 +13,32 @@ function ProjectCard(props) {
     <Card.Title>{props.title}</Card.Title>
     <Card.Text style={{ textAlign: "justify" }}>{props.description}</Card.Text>
 
-    {/* This div will push to the bottom */}
-    <div className="mt-auto d-flex flex-wrap gap-2 justify-center">
-      <Button
-        className="viewbtn"
-        variant="dark"
-        href={props.ghLink}
-        target="_blank"
-      >
-        View
-      </Button>
-
-      {!props.isBlog && props.demoLink && (
+    {/* Button row */}
+    <div className="mt-auto d-flex flex-wrap gap-2 justify-content-center">
+      {/* GitHub Button */}
+      {props.ghLink && (
         <Button
-          variant="primary"
+          className="project-btn"
+          variant="outline-light"
+          href={props.ghLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BsGithub/>
+        </Button>
+      )}
+
+      {/* Live Demo Button */}
+      {props.demoLink && (
+        <Button
+          className="project-btn"
+          variant="outline-light"
           href={props.demoLink}
           target="_blank"
+          rel="noopener noreferrer"
+          color=""
         >
-          Demo
+          <BsGlobe/>
         </Button>
       )}
     </div>

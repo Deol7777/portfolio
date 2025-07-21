@@ -5,7 +5,6 @@ import Header from '../components/Header/Header'
 function Contact() {
   return (
     <div>
-      <Header />
       <Contactpage />
     </div>
   )

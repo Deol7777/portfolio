@@ -9,9 +9,10 @@ import { motion } from "framer-motion";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import AnimeCursor from "./components/AnimatedCursor/AnimatedCursor";
+import Header from "./components/Header/Header.js";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, upadateLoad] = useState(false);
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -43,7 +44,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
-    }, 1200);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, []);
@@ -52,6 +53,7 @@ function App() {
     <div className="App">
       <Router>
         <Preloader load={load} />
+        <Header/>
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Routes>
             <Route path="/" element={<Home />}></Route>

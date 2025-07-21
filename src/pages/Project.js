@@ -5,7 +5,6 @@ import Projectlist from '../components/Projectlist/Projectlist'
 function Project() {
   return (
     <div>
-      <Header />
       <Projectlist />
     </div>
   )

@@ -1,18 +1,24 @@
 import React from 'react'
-import '../../pages/style.css';
+import '../../pages/style.css'
 import ProjectCard from "./ProjectCard";
 import { Container, Row, Col } from 'react-bootstrap'
-import useradminpanel from '../../Assets/Admin-Panel-Dashboard.png'
+import foodApp from '../../Assets/foodApp.png'
+import eventsApp from '../../Assets/eventsApp.png'
 import olximage from '../../Assets/olx-clone image.png'
 import netfliximage from '../../Assets/React-App-netflix-clone.png'
 import gridlinesbuilders from '../../Assets/Gridlinesbuilders.png'
 import charlespizza from '../../Assets/Charlestown-Pizza.png'
 import todolist from '../../Assets/todolist.png'
-import foodApp from '../../Assets/foodApp.png'
+import DarkVeil from '../../ReactBits/DarkVeil'
 
 function Projectlist() {
   return (
     <div className="projectbackground">
+      {/* this stays fixed behind everything */}
+      <div className="project-background-veil">
+        <DarkVeil />
+      </div>
+
       <Container fluid className="project-section">
         <Container>
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
@@ -20,9 +26,18 @@ function Projectlist() {
               <ProjectCard
                 imgPath={foodApp}
                 isBlog={false}
-                title="Dashboard Panel"
+                title="Flavour Dash"
                 description="Food Order App using react.js as FE, firebase as a backend, and deploye don Github. Provides users with an interactive way to place an order from pre-defined items and display a cart indicating the Total price and quantity of items. Users can further vary the amount from within the cart and input the address for the order to be delivered."
-                ghLink="https://deol7777.github.io/Food-App/"
+                  ghLink="https://github.com/Deol7777/Food-App"
+              />
+            </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+                imgPath={eventsApp}
+                isBlog={false}
+                title="EventHub"
+                description="A modern full-stack events management platform built with React and Node.js, featuring secure authentication, beautiful glass-morphism design, and complete CRUD functionality for event creation and modification."
+                ghLink="https://github.com/Deol7777/Events-Manager"
               />
             </Col>
 
@@ -30,7 +45,7 @@ function Projectlist() {
               <ProjectCard
                 imgPath={olximage}
                 isBlog={false}
-                title="Olx-Clone"
+                title=""
                 description="Olx-clone builds with react js. using firebase as a backend and deploying in firebase. Olx-Clone is a potential classified advertisement website that categorizes objects in a user-friendly manner & displays them as advertisements.. Classifieds can be posted that involve selling, and buying using React-router, context, react hooks."
                 ghLink="https://olx-clone-rahul.netlify.app/"
               />
@@ -79,6 +94,7 @@ function Projectlist() {
         </Container>
       </Container>
     </div>
-  );
+  )
 }
+
 export default Projectlist

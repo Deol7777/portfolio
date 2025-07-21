@@ -397,15 +397,16 @@
   font-family: "Poppins";
 }
 .project-card-view {
-  display: flex;
-  flex-direction: column;
-  height: 100% !important;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-              rgba(17, 17, 26, 0.1) 0px 8px 24px,
-              rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
-  color: var(--g-second);
-  border-radius: 15px;
-  border: solid black;
+display: flex;
+    flex-direction: column;
+    height: 100% !important;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
+    color: var(--g-second);
+    border-radius: 15px;
+    background: transparent;
+    color: white;
+    backdrop-filter: blur(15px);
+    border: #a2a2a217 solid;
 }
 
 .project-card-view:hover {
@@ -413,14 +414,14 @@
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
               rgba(17, 17, 26, 0.1) 0px 8px 24px,
               rgba(17, 17, 26, 0.1) 0px 16px 56px !important;
-  background-color: rgb(231, 231, 231);
+  background-color: #b1b1b111;
 }
 
 .card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
-  height: 230px;
+    opacity: 0.8 !important;
+    height: 230px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .viewbtn {
@@ -527,7 +528,6 @@
   }
 }
 
-/*Addedd later*/
 #logo {
   width: 130px;
 }
@@ -583,4 +583,22 @@ a.socialLink:hover {
   color: #5a0f0f;
   animation: vibrate 30ms linear infinite forwards;
   font-family: "Bitcount Grid Single", system-ui;
+}
+
+.projectbackground {
+  position: relative;
+  z-index: 1;          
+}
+
+.project-background-veil {
+  position: fixed;    
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;       
+}
+
+p.card-text {
+    color: #999999;
 }
