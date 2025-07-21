@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Preloader from "../src/components/Pre";
 import Home from "./pages/Home.js";
 import About from "./pages/About";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
