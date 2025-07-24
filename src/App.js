@@ -6,38 +6,10 @@ import Home from "./pages/Home.js";
 import About from "./pages/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Project from "./pages/Project";
-import Contact from "./pages/Contact";
 import Header from "./components/Header/Header.js";
 
 function App() {
   const [load, upadateLoad] = useState(false);
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
-  console.log(mousePosition);
-
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -57,7 +29,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/project" element={<Project />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </Router>

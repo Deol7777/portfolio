@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "../../pages/style.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { animate, createScope } from 'animejs';
-import { Link } from "react-router-dom";
 function Aboutpage() {
   const root = useRef(null);
   const scope = useRef(null);
@@ -91,8 +90,8 @@ function Aboutpage() {
   // Flattened skills array
   const skills = [
     "HTML5/CSS3", "JavaScript", "TypeScript", "Java", "Python",
-    "React Js", "Redux Js", "Angular", "Spring",
-    "Git/Github", "AWS", "SQL", "Tailwind CSS", "Bootstrap 5"
+    "React Js", "Redux Js", "Angular", "Spring", "Algorithms",
+    "Git/Github", "AWS", "SQL", "Tailwind", "Bootstrap", "Data Structures"
   ];
 
   // Import Link from react-router-dom at the top of your file:
@@ -131,9 +130,9 @@ function Aboutpage() {
         </Row>
         <p className="aboutdetails">
           <span id="stoppingBy">
-            <Link to="/contact" style={{ color: "inherit", textDecoration: "none" }}>
+            <a href="mailto:gurnoordeol@gmail.com" style={{ color: "inherit", textDecoration: "none" }}>
               Thanks for stopping by—let’s connect!
-            </Link>
+            </a>
           </span>
         </p>
         <Row>

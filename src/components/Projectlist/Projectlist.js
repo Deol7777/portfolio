@@ -4,16 +4,15 @@ import ProjectCard from "./ProjectCard";
 import { Container, Row, Col } from 'react-bootstrap'
 import foodApp from '../../Assets/foodApp.png'
 import eventsApp from '../../Assets/eventsApp.png'
-import olximage from '../../Assets/olx-clone image.png'
-import netfliximage from '../../Assets/React-App-netflix-clone.png'
+import westShoreye from '../../Assets/westShoreEye.png'
+import phpWebDesign from '../../Assets/phpWebDesign.png'
 import gridlinesbuilders from '../../Assets/Gridlinesbuilders.png'
 import charlespizza from '../../Assets/Charlestown-Pizza.png'
-import todolist from '../../Assets/todolist.png'
 import DarkVeil from '../../ReactBits/DarkVeil'
 
 function Projectlist() {
   return (
-    <div className="projectbackground">
+    <div className="projectbackground" style={{ marginTop: "20px" }}>
       {/* this stays fixed behind everything */}
       <div className="project-background-veil">
         <DarkVeil />
@@ -40,24 +39,22 @@ function Projectlist() {
                 ghLink="https://github.com/Deol7777/Events-Manager"
               />
             </Col>
-
-            <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={olximage}
+                imgPath={phpWebDesign}
                 isBlog={false}
-                title=""
-                description="Olx-clone builds with react js. using firebase as a backend and deploying in firebase. Olx-Clone is a potential classified advertisement website that categorizes objects in a user-friendly manner & displays them as advertisements.. Classifieds can be posted that involve selling, and buying using React-router, context, react hooks."
-                ghLink="https://olx-clone-rahul.netlify.app/"
+                title="PHP Web Desgin"
+                description="PHP Web Design built using Joomla 5, fully responsive and deployed with PayPal integration. Allows customers to log in, purchase premium extensions, and access their downloads securely. Users can also leave feedback on products, enhancing engagement and trust across the platform."
+                webLink="https://www.php-web-design.com/"
               />
             </Col>
-
             <Col md={4} className="project-card">
               <ProjectCard
-                imgPath={netfliximage}
+                imgPath={westShoreye}
                 isBlog={false}
-                title="Netflix-Clone"
-                description="This project is a simplified front-end clone of Netflix. It was created with React js. It uses TMDB (The Movie Data Base ) API and uses the Axios tool. Users can click movie images with embedded YouTube trailers or related videos about the movie."
-                ghLink="https://react-netflixweb-clone.netlify.app/"
+                title="West Shore Eyecare"
+                description="West Shore Eye Care – built using Joomla 5 with a fully responsive layout and seamless navigation on any device. It features a contact form and embedded map for easy location access, along with sections showcasing eyewear brands, services offered, and team member profiles. Visitors can quickly learn about the practice and reach out—all through a clean, well-organized interface."
+                webLink="https://westshoreeyecare.ca/"
               />
             </Col>
 
@@ -67,27 +64,7 @@ function Projectlist() {
                 isBlog={false}
                 title="Grid Line Builders"
                 description="Grid line builders is a static webpage built with HTML, CSS, and JavaScript. Users can see images of their work and contact information that helps to connect the home builders through a webpage. webpage builds responsive to multiple sizes of devices."
-                ghLink="https://gridlinesbuilders.in/"
-              />
-            </Col>
-
-            <Col md={4} className="project-card">
-              <ProjectCard
-                imgPath={charlespizza}
-                isBlog={false}
-                title="Charlestown Pizza"
-                description="Charlestown pizza is a static website completely build with bootstrap with fully responsive."
-                ghLink="https://rahulvijay81.github.io/Pizzastore-bootstrap/"
-              />
-            </Col>
-
-            <Col md={4} className="project-card">
-              <ProjectCard
-                imgPath={todolist}
-                isBlog={false}
-                title="To Do List"
-                description=" To-Do App that build will allow a user to add a task to a list of to-do items. Once the task is added, the user will be able to delete it as completed once it has done."
-                ghLink="https://todolist-rahul81.netlify.app/"
+                webLink="https://gridlinesbuilders.in/"
               />
             </Col>
           </Row>

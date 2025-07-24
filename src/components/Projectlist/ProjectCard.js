@@ -3,8 +3,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { BsGithub, BsGlobe } from "react-icons/bs";
 
-
-
 function ProjectCard(props) {
   return (
     <Card className="project-card-view d-flex flex-column">
@@ -29,11 +27,11 @@ function ProjectCard(props) {
       )}
 
       {/* Live Demo Button */}
-      {props.demoLink && (
+      {props.webLink && (
         <Button
           className="project-btn"
           variant="outline-light"
-          href={props.demoLink}
+          href={props.webLink}
           target="_blank"
           rel="noopener noreferrer"
           color=""

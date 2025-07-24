@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import "../../pages/style.css";
 
@@ -71,7 +71,7 @@ function Header() {
             </NavLink>
           </Nav.Item>
 
-          <Nav.Item>
+          {/* <Nav.Item>
             <NavLink
               className="nav-link"
               to="/contact"
@@ -79,7 +79,7 @@ function Header() {
             >
               Contact
             </NavLink>
-          </Nav.Item>
+          </Nav.Item> */}
 
           <Button
             onClick={() => {
