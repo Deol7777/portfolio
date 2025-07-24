@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../pages/style.css'
 import ProjectCard from "./ProjectCard";
 import { Container, Row, Col } from 'react-bootstrap'
@@ -7,7 +6,6 @@ import eventsApp from '../../Assets/eventsApp.png'
 import westShoreye from '../../Assets/westShoreEye.png'
 import phpWebDesign from '../../Assets/phpWebDesign.png'
 import gridlinesbuilders from '../../Assets/Gridlinesbuilders.png'
-import charlespizza from '../../Assets/Charlestown-Pizza.png'
 import DarkVeil from '../../ReactBits/DarkVeil'
 
 function Projectlist() {
