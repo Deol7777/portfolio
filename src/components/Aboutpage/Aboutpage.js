@@ -89,9 +89,9 @@ function Aboutpage() {
 
   // Flattened skills array
   const skills = [
-    "HTML5/CSS3", "JavaScript", "TypeScript", "Java", "Python",
+    "HTML5/CSS3", "JavaScript", "TypeScript", "Java","PHP", "Python", "Joomla", 
     "React Js", "Redux Js", "Angular", "Spring", "Algorithms",
-    "Git/Github", "AWS", "SQL", "Tailwind", "Bootstrap", "Data Structures"
+    "Git/Github", "AWS", "SQL", "CSS", "SCSS", "Tailwind", "Bootstrap", "Data Structures"
   ];
 
   // Import Link from react-router-dom at the top of your file:
@@ -107,10 +107,12 @@ function Aboutpage() {
             </h3> */}
             <div>
               <p className="aboutdetails">
-                A curious and dedicated software developer who enjoys building clean, efficient, and user-friendly web applications.<br />
-                I mostly work with Java and React, but I’m always exploring new tools, technologies, and ways to improve how we write and ship code.<br /><br />
-                I care a lot about writing maintainable software, collaborating with teams, and making sure the end-user experience actually makes sense (because yes, buttons <em>should</em> do what they say).<br /><br />
-                Outside of code, I like learning about infrastructure, observing how things break (so I can fix them), and occasionally wondering how we ever coded without dark mode.<br /><br />
+                A curious and dedicated software developer who enjoys building clean, efficient, and user-friendly web applications. I am very proficient in Joomla and have delivered 50+ client websites, tailoring each to meet unique needs and business goals.<br /><br />  
+I have extensive experience working with a wide range of programming languages and technologies, but Java and React remain my favorites.<br /><br />  
+I care a lot about writing maintainable software, collaborating with teams, and making sure the end-user experience actually makes sense (because yes, buttons should do what they say).<br /><br />  
+Outside of code, I like learning about infrastructure, observing how things break (so I can fix them), and occasionally wondering how we ever coded without dark mode.
+
+
               </p>
             </div>
           </Col>
@@ -130,7 +132,7 @@ function Aboutpage() {
         </Row>
         <p className="aboutdetails">
           <span id="stoppingBy">
-            <a href="mailto:gurnoordeol@gmail.com" style={{ color: "inherit", textDecoration: "none" }}>
+            <a href="mailto:gurnoordeol77@gmail.com" style={{ color: "inherit", textDecoration: "none" }}>
               Thanks for stopping by—let’s connect!
             </a>
           </span>
@@ -140,7 +142,7 @@ function Aboutpage() {
 
         {/* Skills Section */}
         <h3 className="aboutmetext" style={{ marginTop: "2rem" ,marginBottom: "3rem"  }}>
-          What can I Do
+          Skills
         </h3>
         <ul className="skilllist pl-0 text-lg">
           {skills.map((skill, index) => (
