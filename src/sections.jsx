@@ -165,9 +165,9 @@ function Hero() {
             </a>
           </div>
           <div className="hero__socials">
-            <a href="#" className="social" aria-label="GitHub" onClick={(e) => e.preventDefault()}><GithubIcon size={16} /></a>
-            <a href="#" className="social" aria-label="LinkedIn" onClick={(e) => e.preventDefault()}><LinkedinIcon size={16} /></a>
-            <a href="#" className="social" aria-label="Email" onClick={(e) => e.preventDefault()}><MailIcon size={16} /></a>
+            <a href="https://github.com/Deol7777" target="_blank" rel="noopener noreferrer" className="social" aria-label="GitHub"><GithubIcon size={16} /></a>
+            <a href="https://www.linkedin.com/in/gurnoor-deol/" target="_blank" rel="noopener noreferrer" className="social" aria-label="LinkedIn"><LinkedinIcon size={16} /></a>
+            <a href="mailto:deolgurnoor77707@gmail.com" className="social" aria-label="Email"><MailIcon size={16} /></a>
             <a href="https://docs.google.com/document/d/1INLUbgrCy366AcTmcO4OFYZ-nDoG_O7Mh1mPM8BhBBQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="social" aria-label="Résumé"><FileIcon size={16} /></a>
           </div>
         </div>
@@ -595,9 +595,9 @@ function Footer() {
     <footer className="footer">
       <div>© 2026 Gurnoor Deol. Crafted with care. <span style={{ color: "var(--leaf-soft)" }}><LeafMark size={12} /></span></div>
       <div className="footer__socials">
-        <a href="#" className="social" onClick={(e) => e.preventDefault()} aria-label="GitHub"><GithubIcon size={14} /></a>
-        <a href="#" className="social" onClick={(e) => e.preventDefault()} aria-label="LinkedIn"><LinkedinIcon size={14} /></a>
-        <a href="#" className="social" onClick={(e) => e.preventDefault()} aria-label="Email"><MailIcon size={14} /></a>
+        <a href="https://github.com/Deol7777" target="_blank" rel="noopener noreferrer" className="social" aria-label="GitHub"><GithubIcon size={14} /></a>
+        <a href="https://www.linkedin.com/in/gurnoor-deol/" target="_blank" rel="noopener noreferrer" className="social" aria-label="LinkedIn"><LinkedinIcon size={14} /></a>
+        <a href="mailto:deolgurnoor77707@gmail.com" className="social" aria-label="Email"><MailIcon size={14} /></a>
       </div>
     </footer>);
 
